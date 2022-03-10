@@ -1,0 +1,15 @@
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\bin\Debug\net6.0\ColouringMap.exe
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\bin\Debug\net6.0\ColouringMap.deps.json
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\bin\Debug\net6.0\ColouringMap.runtimeconfig.json
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\bin\Debug\net6.0\ColouringMap.dll
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\bin\Debug\net6.0\ColouringMap.pdb
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\obj\Debug\net6.0\ColouringMap.csproj.AssemblyReference.cache
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\obj\Debug\net6.0\ColouringMap.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\obj\Debug\net6.0\ColouringMap.AssemblyInfoInputs.cache
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\obj\Debug\net6.0\ColouringMap.AssemblyInfo.cs
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\obj\Debug\net6.0\ColouringMap.csproj.CoreCompileInputs.cache
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\obj\Debug\net6.0\ColouringMap.dll
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\obj\Debug\net6.0\refint\ColouringMap.dll
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\obj\Debug\net6.0\ColouringMap.pdb
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\obj\Debug\net6.0\ColouringMap.genruntimeconfig.cache
+C:\Users\Stanislaw\source\repos\ColouringMap\ColouringMap\obj\Debug\net6.0\ref\ColouringMap.dll
