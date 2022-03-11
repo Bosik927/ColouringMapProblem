@@ -12,20 +12,23 @@ using System.Threading.Tasks;
 // See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
 
-/*
+//1) INTERPRETACCJA
 int[,] arr = new int[4, 4] {{ 0, 1, 0, 0 },
                               { 1, 0, 1, 0 },
                               { 0, 1, 0, 1 },
-                              { 0, 0, 1, 0 }};*/
+                              { 0, 0, 1, 0 }};
 
+/*//FALSE EXAMPLE
 int[,] arr = new int[5, 5] {{ 0, 1, 1, 1, 1 },
                               { 1, 0, 1, 0, 1},
                               { 0, 1, 0, 1 , 1},
                               { 0, 0, 1, 0 , 1},
-                                { 0, 0, 1, 0 , 1}};
+                                { 0, 0, 1, 0 , 1}};*/
 
-ColouringMap.Displayer dis = new ColouringMap.Displayer();
+//ColouringMap.Displayer dis = new ColouringMap.Displayer();
 //dis.display(arr);
+
+//2) ZAMIANA NA DIMAXA
 ColouringMap.Dmax dmax = new ColouringMap.Dmax();
 dmax.createCnf(arr);
 
@@ -38,9 +41,11 @@ RSatProcess.StartInfo.Arguments = "C:/Users/Stanislaw/source/repos/ColouringMap/
 RSatProcess.Start();
 
 //Console.Write(Environment.NewLine);
+//3) INTERPRETACJA PRZE RSA
 string RSatResult = RSatProcess.StandardOutput.ReadToEnd();
-//Console.WriteLine(RSatResult);
+Console.Write(RSatResult);
 
+//4) WYNIK
 if (RSatResult.Contains("SATISFIABLE"))
 {
     Console.Write("True");

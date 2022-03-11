@@ -22,9 +22,9 @@ namespace ColouringMap
                 int blueIndex = num + 3;
                 int orangeIndex = num + 4;
 
-                //Only one color
+                //Only one color - musi byc nadany jeden kolor
                 line = line + (redIndex) + " " + +(greenIndex) + " " + (blueIndex) + " " + orangeIndex + " 0" + System.Environment.NewLine;
-                //Color differenes
+                //Color differenes - nie moze byc nadany rownoczesnie wiecej niz jeden koilor
                 line = line + "-" + (redIndex) + " -" + (greenIndex) + " 0" + System.Environment.NewLine;
                 line = line + "-" + (redIndex) + " -" + (blueIndex) + " 0" + System.Environment.NewLine;
                 line = line + "-" + (redIndex) + " -" + (orangeIndex) + " 0" + System.Environment.NewLine;
@@ -44,6 +44,7 @@ namespace ColouringMap
                         int greenIndexNeigbour = neighbour + 2;
                         int blueIndexNeigbour = neighbour + 3;
                         int orangeIndexNeigbour = neighbour + 4;
+                        //Jezeli sa sasiadami nie moga miec takiego samego koloru
                         line = line + "-" + (redIndex) + " -" + (redIndexNeigbour) + " 0" + System.Environment.NewLine;
                         line = line + "-" + (greenIndex) + " -" + (greenIndexNeigbour) + " 0" + System.Environment.NewLine;
                         line = line + "-" + (blueIndex) + " -" + (blueIndexNeigbour) + " 0" + System.Environment.NewLine;
