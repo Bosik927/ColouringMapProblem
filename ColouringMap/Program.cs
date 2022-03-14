@@ -18,19 +18,19 @@ int[,] arr = new int[6, 6]   {{ 0, 1, 1, 1, 0, 0},
                               { 1, 1, 0, 1, 0, 0},
                               { 1, 0, 1, 0, 0, 0},
                               { 0, 1, 0, 0, 0, 1},
-                              { 0, 1, 0, 0, 1, 0}}; 
- /*//FALSE EXAMPLE
- int[,] arr = new int[5, 5] {{ 0, 1, 1, 1, 1 },
+                              { 0, 1, 0, 0, 1, 0}};
+//FALSE EXAMPLE
+/*int[,] arr = new int[5, 5] {{ 0, 1, 1, 1, 1 },
                                { 1, 0, 1, 0, 1},
                                { 0, 1, 0, 1 , 1},
                                { 0, 0, 1, 0 , 1},
                                  { 0, 0, 1, 0 , 1}};*/
 
- //ColouringMap.Displayer dis = new ColouringMap.Displayer();
- //dis.display(arr);
+//ColouringMap.Displayer dis = new ColouringMap.Displayer();
+//dis.display(arr);
 
- //2) ZAMIANA NA DIMAXA
- ColouringMap.Dmax dmax = new ColouringMap.Dmax();
+//2) ZAMIANA NA DIMAXA
+ColouringMap.Dmax dmax = new ColouringMap.Dmax();
 dmax.createCnf(arr);
 
 Process RSatProcess = new Process();
@@ -50,12 +50,13 @@ string address = lines[1];
 
 Console.Write(Environment.NewLine);
 
-string[] lines2 = address.Substring(2, address.Length - 4).Split(" ");
-int[] lines3 = Array.ConvertAll(lines2, s => int.Parse(s));
-lines3 = lines3.OrderBy(Math.Abs).ToArray();
+
 //4) WYNIK
 if (RSatResult.Contains("SATISFIABLE"))
 {
+    string[] lines2 = address.Substring(2, address.Length - 4).Split(" ");
+    int[] lines3 = Array.ConvertAll(lines2, s => int.Parse(s));
+    lines3 = lines3.OrderBy(Math.Abs).ToArray();
     foreach (int element in lines3)
     {
         if (element > 0)
