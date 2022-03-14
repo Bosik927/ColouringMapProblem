@@ -13,23 +13,24 @@ using System.Threading.Tasks;
 //Console.WriteLine("Hello, World!");
 
 //1) INTERPRETACCJA
-int[,] arr = new int[4, 4] {{ 0, 1, 0, 0 },
-                              { 1, 0, 1, 0 },
-                              { 0, 1, 0, 1 },
-                              { 0, 0, 1, 0 }};
+int[,] arr = new int[6, 6]   {{ 0, 1, 1, 1, 0, 0},
+                              { 1, 0, 1, 0, 1, 1},
+                              { 1, 1, 0, 1, 0, 0},
+                              { 1, 0, 1, 0, 0, 0},
+                              { 0, 1, 0, 0, 0, 1},
+                              { 0, 1, 0, 0, 1, 0}}; 
+ /*//FALSE EXAMPLE
+ int[,] arr = new int[5, 5] {{ 0, 1, 1, 1, 1 },
+                               { 1, 0, 1, 0, 1},
+                               { 0, 1, 0, 1 , 1},
+                               { 0, 0, 1, 0 , 1},
+                                 { 0, 0, 1, 0 , 1}};*/
 
-/*//FALSE EXAMPLE
-int[,] arr = new int[5, 5] {{ 0, 1, 1, 1, 1 },
-                              { 1, 0, 1, 0, 1},
-                              { 0, 1, 0, 1 , 1},
-                              { 0, 0, 1, 0 , 1},
-                                { 0, 0, 1, 0 , 1}};*/
+ //ColouringMap.Displayer dis = new ColouringMap.Displayer();
+ //dis.display(arr);
 
-//ColouringMap.Displayer dis = new ColouringMap.Displayer();
-//dis.display(arr);
-
-//2) ZAMIANA NA DIMAXA
-ColouringMap.Dmax dmax = new ColouringMap.Dmax();
+ //2) ZAMIANA NA DIMAXA
+ ColouringMap.Dmax dmax = new ColouringMap.Dmax();
 dmax.createCnf(arr);
 
 Process RSatProcess = new Process();
@@ -44,12 +45,46 @@ RSatProcess.Start();
 //3) INTERPRETACJA PRZE RSA
 string RSatResult = RSatProcess.StandardOutput.ReadToEnd();
 Console.Write(RSatResult);
+string[] lines = RSatResult.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+string address = lines[1];
 
+Console.Write(Environment.NewLine);
+
+string[] lines2 = address.Substring(2, address.Length - 4).Split(" ");
+int[] lines3 = Array.ConvertAll(lines2, s => int.Parse(s));
+lines3 = lines3.OrderBy(Math.Abs).ToArray();
 //4) WYNIK
 if (RSatResult.Contains("SATISFIABLE"))
 {
+    foreach (int element in lines3)
+    {
+        if (element > 0)
+        {
+            int color = element % 4;
+
+            int wierzcholek = ((element - 1) / 4) + 1;
+
+            if (color == 0)
+            {
+                Console.Write("Wierzcholek: " + wierzcholek + " kolor: pomaranczowy" + Environment.NewLine);
+            }
+            if (color == 1)
+            {
+                Console.Write("Wierzcholek: " + wierzcholek + " kolor: czerwony" + Environment.NewLine);
+            }
+            if (color == 2)
+            {
+                Console.Write("Wierzcholek: " + wierzcholek + " kolor: zielony" + Environment.NewLine);
+            }
+            if (color == 3)
+            {
+                Console.Write("Wierzcholek: " + wierzcholek + " kolor: niebieski" + Environment.NewLine);
+            }
+        }
+    }
     Console.Write("True");
 }
 else {
     Console.Write("False");
 }
+
